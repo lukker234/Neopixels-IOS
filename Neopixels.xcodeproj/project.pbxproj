@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		90165DE71DABB8C800B6059E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90165DE61DABB8C800B6059E /* AppDelegate.swift */; };
+		90165DE91DABB8C800B6059E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90165DE81DABB8C800B6059E /* ViewController.swift */; };
+		90165DEC1DABB8C800B6059E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90165DEA1DABB8C800B6059E /* Main.storyboard */; };
+		90165DEF1DABB8C800B6059E /* Neopixels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90165DED1DABB8C800B6059E /* Neopixels.xcdatamodeld */; };
+		90165DF11DABB8C800B6059E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90165DF01DABB8C800B6059E /* Assets.xcassets */; };
+		90165DF41DABB8C800B6059E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90165DF21DABB8C800B6059E /* LaunchScreen.storyboard */; };
+		90165DFF1DABB8C800B6059E /* NeopixelsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90165DFE1DABB8C800B6059E /* NeopixelsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		90165DFB1DABB8C800B6059E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90165DDB1DABB8C700B6059E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90165DE21DABB8C700B6059E;
+			remoteInfo = Neopixels;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		90165DE31DABB8C800B6059E /* Neopixels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neopixels.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90165DE61DABB8C800B6059E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		90165DE81DABB8C800B6059E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		90165DEB1DABB8C800B6059E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		90165DEE1DABB8C800B6059E /* Neopixels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Neopixels.xcdatamodel; sourceTree = "<group>"; };
+		90165DF01DABB8C800B6059E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		90165DF31DABB8C800B6059E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		90165DF51DABB8C800B6059E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90165DFA1DABB8C800B6059E /* NeopixelsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeopixelsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		90165DFE1DABB8C800B6059E /* NeopixelsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeopixelsUITests.swift; sourceTree = "<group>"; };
+		90165E001DABB8C800B6059E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90165DE01DABB8C700B6059E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90165DF71DABB8C800B6059E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		90165DDA1DABB8C700B6059E = {
+			isa = PBXGroup;
+			children = (
+				90165DE51DABB8C800B6059E /* Neopixels */,
+				90165DFD1DABB8C800B6059E /* NeopixelsUITests */,
+				90165DE41DABB8C800B6059E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90165DE41DABB8C800B6059E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90165DE31DABB8C800B6059E /* Neopixels.app */,
+				90165DFA1DABB8C800B6059E /* NeopixelsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90165DE51DABB8C800B6059E /* Neopixels */ = {
+			isa = PBXGroup;
+			children = (
+				90165DE61DABB8C800B6059E /* AppDelegate.swift */,
+				90165DE81DABB8C800B6059E /* ViewController.swift */,
+				90165DEA1DABB8C800B6059E /* Main.storyboard */,
+				90165DF01DABB8C800B6059E /* Assets.xcassets */,
+				90165DF21DABB8C800B6059E /* LaunchScreen.storyboard */,
+				90165DF51DABB8C800B6059E /* Info.plist */,
+				90165DED1DABB8C800B6059E /* Neopixels.xcdatamodeld */,
+			);
+			path = Neopixels;
+			sourceTree = "<group>";
+		};
+		90165DFD1DABB8C800B6059E /* NeopixelsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				90165DFE1DABB8C800B6059E /* NeopixelsUITests.swift */,
+				90165E001DABB8C800B6059E /* Info.plist */,
+			);
+			path = NeopixelsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90165DE21DABB8C700B6059E /* Neopixels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90165E031DABB8C800B6059E /* Build configuration list for PBXNativeTarget "Neopixels" */;
+			buildPhases = (
+				90165DDF1DABB8C700B6059E /* Sources */,
+				90165DE01DABB8C700B6059E /* Frameworks */,
+				90165DE11DABB8C700B6059E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Neopixels;
+			productName = Neopixels;
+			productReference = 90165DE31DABB8C800B6059E /* Neopixels.app */;
+			productType = "com.apple.product-type.application";
+		};
+		90165DF91DABB8C800B6059E /* NeopixelsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90165E061DABB8C800B6059E /* Build configuration list for PBXNativeTarget "NeopixelsUITests" */;
+			buildPhases = (
+				90165DF61DABB8C800B6059E /* Sources */,
+				90165DF71DABB8C800B6059E /* Frameworks */,
+				90165DF81DABB8C800B6059E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90165DFC1DABB8C800B6059E /* PBXTargetDependency */,
+			);
+			name = NeopixelsUITests;
+			productName = NeopixelsUITests;
+			productReference = 90165DFA1DABB8C800B6059E /* NeopixelsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90165DDB1DABB8C700B6059E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Blue90;
+				TargetAttributes = {
+					90165DE21DABB8C700B6059E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = RDD33Q2LEW;
+						ProvisioningStyle = Automatic;
+					};
+					90165DF91DABB8C800B6059E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = RDD33Q2LEW;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 90165DE21DABB8C700B6059E;
+					};
+				};
+			};
+			buildConfigurationList = 90165DDE1DABB8C700B6059E /* Build configuration list for PBXProject "Neopixels" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 90165DDA1DABB8C700B6059E;
+			productRefGroup = 90165DE41DABB8C800B6059E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90165DE21DABB8C700B6059E /* Neopixels */,
+				90165DF91DABB8C800B6059E /* NeopixelsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90165DE11DABB8C700B6059E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90165DF41DABB8C800B6059E /* LaunchScreen.storyboard in Resources */,
+				90165DF11DABB8C800B6059E /* Assets.xcassets in Resources */,
+				90165DEC1DABB8C800B6059E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90165DF81DABB8C800B6059E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90165DDF1DABB8C700B6059E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90165DEF1DABB8C800B6059E /* Neopixels.xcdatamodeld in Sources */,
+				90165DE91DABB8C800B6059E /* ViewController.swift in Sources */,
+				90165DE71DABB8C800B6059E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90165DF61DABB8C800B6059E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90165DFF1DABB8C800B6059E /* NeopixelsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		90165DFC1DABB8C800B6059E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90165DE21DABB8C700B6059E /* Neopixels */;
+			targetProxy = 90165DFB1DABB8C800B6059E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		90165DEA1DABB8C800B6059E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90165DEB1DABB8C800B6059E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		90165DF21DABB8C800B6059E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90165DF31DABB8C800B6059E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		90165E011DABB8C800B6059E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		90165E021DABB8C800B6059E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		90165E041DABB8C800B6059E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RDD33Q2LEW;
+				INFOPLIST_FILE = Neopixels/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blue90.Neopixels;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		90165E051DABB8C800B6059E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RDD33Q2LEW;
+				INFOPLIST_FILE = Neopixels/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blue90.Neopixels;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		90165E071DABB8C800B6059E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = RDD33Q2LEW;
+				INFOPLIST_FILE = NeopixelsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blue90.NeopixelsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Neopixels;
+			};
+			name = Debug;
+		};
+		90165E081DABB8C800B6059E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = RDD33Q2LEW;
+				INFOPLIST_FILE = NeopixelsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blue90.NeopixelsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Neopixels;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90165DDE1DABB8C700B6059E /* Build configuration list for PBXProject "Neopixels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90165E011DABB8C800B6059E /* Debug */,
+				90165E021DABB8C800B6059E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90165E031DABB8C800B6059E /* Build configuration list for PBXNativeTarget "Neopixels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90165E041DABB8C800B6059E /* Debug */,
+				90165E051DABB8C800B6059E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		90165E061DABB8C800B6059E /* Build configuration list for PBXNativeTarget "NeopixelsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90165E071DABB8C800B6059E /* Debug */,
+				90165E081DABB8C800B6059E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		90165DED1DABB8C800B6059E /* Neopixels.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				90165DEE1DABB8C800B6059E /* Neopixels.xcdatamodel */,
+			);
+			currentVersion = 90165DEE1DABB8C800B6059E /* Neopixels.xcdatamodel */;
+			path = Neopixels.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 90165DDB1DABB8C700B6059E /* Project object */;
+}
