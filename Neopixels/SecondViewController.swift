@@ -196,71 +196,84 @@ class SecondViewController: UIViewController, WWCalendarTimeSelectorProtocol{
     
     
     func createDot(){
-        for point in point_array{
+        if (point_array.count == 7){
+            for point in point_array{
             
-            let value_location = point_array.index(of: point)!
+                let value_location = point_array.index(of: point)!
             
-            if value_location+1 == 7{
-                i = value_location
-            }else{
-                i = value_location+1
+                if value_location+1 == 7{
+                    i = value_location
+                }else{
+                    i = value_location+1
+                }
+            
+                let line :UIBezierPath = UIBezierPath()
+                let linelayer = CAShapeLayer()
+                line.move(to: point)
+                line.addLine(to: point_array[i])
+                linelayer.strokeColor = UIColorFromHex(0xc303d51).cgColor
+                linelayer.lineWidth = 1.0
+                line.stroke()
+                linelayer.path = line.cgPath
+                view.layer.addSublayer(linelayer)
+            
+                let circlePath = UIBezierPath(arcCenter: point, radius: CGFloat(5), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
+                let shapeLayer = CAShapeLayer()
+                shapeLayer.path = circlePath.cgPath
+                shapeLayer.fillColor = UIColorFromHex(0xcecf0f1).cgColor
+                shapeLayer.strokeColor = UIColorFromHex(0xc303d51).cgColor
+                shapeLayer.lineWidth = 1.0
+                view.layer.addSublayer(shapeLayer)
+            
+                print("First: \(point)")
             }
-            
-            let line :UIBezierPath = UIBezierPath()
-            let linelayer = CAShapeLayer()
-            line.move(to: point)
-            line.addLine(to: point_array[i])
-            linelayer.strokeColor = UIColorFromHex(0xc303d51).cgColor
-            linelayer.lineWidth = 1.0
-            line.stroke()
-            linelayer.path = line.cgPath
-            view.layer.addSublayer(linelayer)
-            
-            let circlePath = UIBezierPath(arcCenter: point, radius: CGFloat(5), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
-            let shapeLayer = CAShapeLayer()
-            shapeLayer.path = circlePath.cgPath
-            shapeLayer.fillColor = UIColorFromHex(0xcecf0f1).cgColor
-            shapeLayer.strokeColor = UIColorFromHex(0xc303d51).cgColor
-            shapeLayer.lineWidth = 1.0
-            view.layer.addSublayer(shapeLayer)
-            
-            print("First: \(point)")
+        }else if(point_array.count < 7){
+            let alert = UIAlertController(title: "Te weinig metingen", message: "Helaas zijn er niet genoeg metingen voor deze dag, kies een andere dag om de vergelijking voort te zetten.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Begrepen", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
     
     func createDot2(){
-        for point in point_array2{
+        print("Count_array: \(point_array2.count)")
+        if (point_array2.count == 7){
+            for point in point_array2{
             
-            let value_location = point_array2.index(of: point)!
+                let value_location = point_array2.index(of: point)!
             
-            if value_location+1 == 7{
-                i = value_location
-                print("Value location-1: \(i)")
-            }else{
-                i = value_location+1
-                print("Value location-2: \(i)")
+                if value_location+1 == 7{
+                    i = value_location
+                    print("Value location-1: \(i)")
+                }else{
+                    i = value_location+1
+                    print("Value location-2: \(i)")
+                }
+            
+                let line :UIBezierPath = UIBezierPath()
+                let linelayer = CAShapeLayer()
+                line.move(to: point)
+                line.addLine(to: point_array2[i])
+                linelayer.strokeColor = FlatRed().cgColor
+                linelayer.lineWidth = 1.0
+                line.stroke()
+                linelayer.path = line.cgPath
+                view.layer.addSublayer(linelayer)
+            
+                let circlePath = UIBezierPath(arcCenter: point, radius: CGFloat(5), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
+                let shapeLayer = CAShapeLayer()
+                shapeLayer.path = circlePath.cgPath
+                shapeLayer.fillColor = UIColorFromHex(0xcecf0f1).cgColor
+                shapeLayer.strokeColor = FlatRed().cgColor
+                shapeLayer.lineWidth = 1.0
+                view.layer.addSublayer(shapeLayer)
+            
+                print("Second: \(point)")
             }
-            
-            let line :UIBezierPath = UIBezierPath()
-            let linelayer = CAShapeLayer()
-            line.move(to: point)
-            line.addLine(to: point_array2[i])
-            linelayer.strokeColor = FlatRed().cgColor
-            linelayer.lineWidth = 1.0
-            line.stroke()
-            linelayer.path = line.cgPath
-            view.layer.addSublayer(linelayer)
-            
-            let circlePath = UIBezierPath(arcCenter: point, radius: CGFloat(5), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
-            let shapeLayer = CAShapeLayer()
-            shapeLayer.path = circlePath.cgPath
-            shapeLayer.fillColor = UIColorFromHex(0xcecf0f1).cgColor
-            shapeLayer.strokeColor = FlatRed().cgColor
-            shapeLayer.lineWidth = 1.0
-            view.layer.addSublayer(shapeLayer)
-            
-            print("Second: \(point)")
+        }else if(point_array2.count < 7){
+            let alert = UIAlertController(title: "Te weinig metingen", message: "Helaas zijn er niet genoeg metingen voor deze dag, kies een andere dag om de vergelijking voort te zetten.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Begrepen", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
