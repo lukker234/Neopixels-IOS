@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2F28C1140525BFC37753E8 /* Pods_NeopixelsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590B540FCEE55D1711A31897 /* Pods_NeopixelsUITests.framework */; };
+		57E6216B51876F1D938FA6A1 /* Pods_Neopixels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A823C176D8E14EB267FA7878 /* Pods_Neopixels.framework */; };
 		90165DE71DABB8C800B6059E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90165DE61DABB8C800B6059E /* AppDelegate.swift */; };
 		90165DE91DABB8C800B6059E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90165DE81DABB8C800B6059E /* ViewController.swift */; };
 		90165DEC1DABB8C800B6059E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90165DEA1DABB8C800B6059E /* Main.storyboard */; };
@@ -14,6 +16,20 @@
 		90165DF11DABB8C800B6059E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90165DF01DABB8C800B6059E /* Assets.xcassets */; };
 		90165DF41DABB8C800B6059E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90165DF21DABB8C800B6059E /* LaunchScreen.storyboard */; };
 		90165DFF1DABB8C800B6059E /* NeopixelsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90165DFE1DABB8C800B6059E /* NeopixelsUITests.swift */; };
+		90165E0D1DAE603E00B6059E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90165E0C1DAE603E00B6059E /* SecondViewController.swift */; };
+		901714FF1E07092F0096C041 /* connectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901714FE1E07092F0096C041 /* connectInfoViewController.swift */; };
+		907328861DB4A5A1005016D8 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907328851DB4A5A1005016D8 /* NetworkViewController.swift */; };
+		907328881DB4B084005016D8 /* wifiCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907328871DB4B084005016D8 /* wifiCheckViewController.swift */; };
+		9079BB5D1E1E7F920083E716 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079BB531E1E7F920083E716 /* Duration.swift */; };
+		9079BB5E1E1E7F920083E716 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079BB541E1E7F920083E716 /* Int+Timepiece.swift */; };
+		9079BB5F1E1E7F920083E716 /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079BB551E1E7F920083E716 /* NSCalendar+Timepiece.swift */; };
+		9079BB601E1E7F920083E716 /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079BB561E1E7F920083E716 /* NSDate+Timepiece.swift */; };
+		9079BB611E1E7F920083E716 /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079BB571E1E7F920083E716 /* NSDateComponents+Timepiece.swift */; };
+		9079BB621E1E7F920083E716 /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079BB581E1E7F920083E716 /* String+Timepiece.swift */; };
+		9079BB631E1E7F920083E716 /* WWCalendarTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079BB5A1E1E7F920083E716 /* WWCalendarTimeSelector.swift */; };
+		9079BB641E1E7F920083E716 /* WWCalendarTimeSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9079BB5B1E1E7F920083E716 /* WWCalendarTimeSelector.storyboard */; };
+		908915C11DB0E1290084A04F /* showTempHumWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908915C01DB0E1290084A04F /* showTempHumWeekViewController.swift */; };
+		90ED396D1DDC629D0042B8D0 /* SendAmountSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ED396C1DDC629D0042B8D0 /* SendAmountSensorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FE188C409525CABDE27A633 /* Pods-NeopixelsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeopixelsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeopixelsUITests/Pods-NeopixelsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		590B540FCEE55D1711A31897 /* Pods_NeopixelsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeopixelsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E98A41A3AC1C18631F1899F /* Pods-NeopixelsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeopixelsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeopixelsUITests/Pods-NeopixelsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		90165DE31DABB8C800B6059E /* Neopixels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neopixels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90165DE61DABB8C800B6059E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90165DE81DABB8C800B6059E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +57,24 @@
 		90165DFA1DABB8C800B6059E /* NeopixelsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeopixelsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90165DFE1DABB8C800B6059E /* NeopixelsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeopixelsUITests.swift; sourceTree = "<group>"; };
 		90165E001DABB8C800B6059E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90165E0C1DAE603E00B6059E /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		901714FE1E07092F0096C041 /* connectInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = connectInfoViewController.swift; sourceTree = "<group>"; };
+		903B4EF21DB510B700F3339A /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMSSH.framework; path = "../../../../Users/lucdaalmeijer/Library/Developer/Xcode/DerivedData/Neopixels-dygxdxnzjziwyyfqggguqvzhsica/Build/Products/Debug-iphoneos/NMSSH/NMSSH.framework"; sourceTree = "<group>"; };
+		907328851DB4A5A1005016D8 /* NetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
+		907328871DB4B084005016D8 /* wifiCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wifiCheckViewController.swift; sourceTree = "<group>"; };
+		9079BB531E1E7F920083E716 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		9079BB541E1E7F920083E716 /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
+		9079BB551E1E7F920083E716 /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
+		9079BB561E1E7F920083E716 /* NSDate+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timepiece.swift"; sourceTree = "<group>"; };
+		9079BB571E1E7F920083E716 /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
+		9079BB581E1E7F920083E716 /* String+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Timepiece.swift"; sourceTree = "<group>"; };
+		9079BB5A1E1E7F920083E716 /* WWCalendarTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWCalendarTimeSelector.swift; sourceTree = "<group>"; };
+		9079BB5B1E1E7F920083E716 /* WWCalendarTimeSelector.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WWCalendarTimeSelector.storyboard; sourceTree = "<group>"; };
+		908915C01DB0E1290084A04F /* showTempHumWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showTempHumWeekViewController.swift; sourceTree = "<group>"; };
+		90ED396C1DDC629D0042B8D0 /* SendAmountSensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendAmountSensorViewController.swift; sourceTree = "<group>"; };
+		A823C176D8E14EB267FA7878 /* Pods_Neopixels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neopixels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1AC8F8274FD7904B8D61B62 /* Pods-Neopixels.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neopixels.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neopixels/Pods-Neopixels.debug.xcconfig"; sourceTree = "<group>"; };
+		EBCC03CA3F5BE3B4DEF4EA25 /* Pods-Neopixels.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neopixels.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neopixels/Pods-Neopixels.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E6216B51876F1D938FA6A1 /* Pods_Neopixels.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +90,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2F28C1140525BFC37753E8 /* Pods_NeopixelsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6881D1AE3B1D2D63951E3FA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1AC8F8274FD7904B8D61B62 /* Pods-Neopixels.debug.xcconfig */,
+				EBCC03CA3F5BE3B4DEF4EA25 /* Pods-Neopixels.release.xcconfig */,
+				6E98A41A3AC1C18631F1899F /* Pods-NeopixelsUITests.debug.xcconfig */,
+				2FE188C409525CABDE27A633 /* Pods-NeopixelsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		90165DDA1DABB8C700B6059E = {
 			isa = PBXGroup;
 			children = (
 				90165DE51DABB8C800B6059E /* Neopixels */,
 				90165DFD1DABB8C800B6059E /* NeopixelsUITests */,
 				90165DE41DABB8C800B6059E /* Products */,
+				6881D1AE3B1D2D63951E3FA2 /* Pods */,
+				968123A08ACA868BB47AE0E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +131,20 @@
 		90165DE51DABB8C800B6059E /* Neopixels */ = {
 			isa = PBXGroup;
 			children = (
+				9079BB5C1E1E7F920083E716 /* Sources */,
 				90165DE61DABB8C800B6059E /* AppDelegate.swift */,
+				908915C01DB0E1290084A04F /* showTempHumWeekViewController.swift */,
 				90165DE81DABB8C800B6059E /* ViewController.swift */,
+				901714FE1E07092F0096C041 /* connectInfoViewController.swift */,
+				90165E0C1DAE603E00B6059E /* SecondViewController.swift */,
 				90165DEA1DABB8C800B6059E /* Main.storyboard */,
 				90165DF01DABB8C800B6059E /* Assets.xcassets */,
 				90165DF21DABB8C800B6059E /* LaunchScreen.storyboard */,
 				90165DF51DABB8C800B6059E /* Info.plist */,
 				90165DED1DABB8C800B6059E /* Neopixels.xcdatamodeld */,
+				907328871DB4B084005016D8 /* wifiCheckViewController.swift */,
+				907328851DB4A5A1005016D8 /* NetworkViewController.swift */,
+				90ED396C1DDC629D0042B8D0 /* SendAmountSensorViewController.swift */,
 			);
 			path = Neopixels;
 			sourceTree = "<group>";
@@ -99,6 +158,40 @@
 			path = NeopixelsUITests;
 			sourceTree = "<group>";
 		};
+		9079BB591E1E7F920083E716 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9079BB531E1E7F920083E716 /* Duration.swift */,
+				9079BB541E1E7F920083E716 /* Int+Timepiece.swift */,
+				9079BB551E1E7F920083E716 /* NSCalendar+Timepiece.swift */,
+				9079BB561E1E7F920083E716 /* NSDate+Timepiece.swift */,
+				9079BB571E1E7F920083E716 /* NSDateComponents+Timepiece.swift */,
+				9079BB581E1E7F920083E716 /* String+Timepiece.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		9079BB5C1E1E7F920083E716 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9079BB591E1E7F920083E716 /* Helper */,
+				9079BB5A1E1E7F920083E716 /* WWCalendarTimeSelector.swift */,
+				9079BB5B1E1E7F920083E716 /* WWCalendarTimeSelector.storyboard */,
+			);
+			name = Sources;
+			path = "../../../../../Users/lucdaalmeijer/Downloads/WWCalendarTimeSelector-master/Sources";
+			sourceTree = "<group>";
+		};
+		968123A08ACA868BB47AE0E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				903B4EF21DB510B700F3339A /* NMSSH.framework */,
+				A823C176D8E14EB267FA7878 /* Pods_Neopixels.framework */,
+				590B540FCEE55D1711A31897 /* Pods_NeopixelsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90165E031DABB8C800B6059E /* Build configuration list for PBXNativeTarget "Neopixels" */;
 			buildPhases = (
+				B51EB85D2C0EAFF437CC483A /* [CP] Check Pods Manifest.lock */,
 				90165DDF1DABB8C700B6059E /* Sources */,
 				90165DE01DABB8C700B6059E /* Frameworks */,
 				90165DE11DABB8C700B6059E /* Resources */,
+				22D3F9AEC219F93F608CEE7E /* [CP] Embed Pods Frameworks */,
+				9C419235828F02B4344B20D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90165E061DABB8C800B6059E /* Build configuration list for PBXNativeTarget "NeopixelsUITests" */;
 			buildPhases = (
+				3630FAD7A04D5F62AD21F499 /* [CP] Check Pods Manifest.lock */,
 				90165DF61DABB8C800B6059E /* Sources */,
 				90165DF71DABB8C800B6059E /* Frameworks */,
 				90165DF81DABB8C800B6059E /* Resources */,
+				73E17E6446DED29969EF679B /* [CP] Copy Pods Resources */,
+				C24248A257CCD11D8346B42C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,17 +243,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Blue90;
 				TargetAttributes = {
 					90165DE21DABB8C700B6059E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = RDD33Q2LEW;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					90165DF91DABB8C800B6059E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = RDD33Q2LEW;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 90165DE21DABB8C700B6059E;
 					};
@@ -184,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9079BB641E1E7F920083E716 /* WWCalendarTimeSelector.storyboard in Resources */,
 				90165DF41DABB8C800B6059E /* LaunchScreen.storyboard in Resources */,
 				90165DF11DABB8C800B6059E /* Assets.xcassets in Resources */,
 				90165DEC1DABB8C800B6059E /* Main.storyboard in Resources */,
@@ -199,14 +301,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22D3F9AEC219F93F608CEE7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neopixels/Pods-Neopixels-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3630FAD7A04D5F62AD21F499 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		73E17E6446DED29969EF679B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeopixelsUITests/Pods-NeopixelsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C419235828F02B4344B20D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neopixels/Pods-Neopixels-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B51EB85D2C0EAFF437CC483A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C24248A257CCD11D8346B42C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeopixelsUITests/Pods-NeopixelsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		90165DDF1DABB8C700B6059E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9079BB621E1E7F920083E716 /* String+Timepiece.swift in Sources */,
+				9079BB611E1E7F920083E716 /* NSDateComponents+Timepiece.swift in Sources */,
+				90ED396D1DDC629D0042B8D0 /* SendAmountSensorViewController.swift in Sources */,
+				901714FF1E07092F0096C041 /* connectInfoViewController.swift in Sources */,
 				90165DEF1DABB8C800B6059E /* Neopixels.xcdatamodeld in Sources */,
+				9079BB601E1E7F920083E716 /* NSDate+Timepiece.swift in Sources */,
 				90165DE91DABB8C800B6059E /* ViewController.swift in Sources */,
+				90165E0D1DAE603E00B6059E /* SecondViewController.swift in Sources */,
+				9079BB5D1E1E7F920083E716 /* Duration.swift in Sources */,
+				907328881DB4B084005016D8 /* wifiCheckViewController.swift in Sources */,
+				908915C11DB0E1290084A04F /* showTempHumWeekViewController.swift in Sources */,
+				9079BB5F1E1E7F920083E716 /* NSCalendar+Timepiece.swift in Sources */,
+				907328861DB4A5A1005016D8 /* NetworkViewController.swift in Sources */,
+				9079BB5E1E1E7F920083E716 /* Int+Timepiece.swift in Sources */,
 				90165DE71DABB8C800B6059E /* AppDelegate.swift in Sources */,
+				9079BB631E1E7F920083E716 /* WWCalendarTimeSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +474,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -294,6 +503,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -316,6 +526,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -336,6 +547,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -343,32 +555,49 @@
 		};
 		90165E041DABB8C800B6059E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1AC8F8274FD7904B8D61B62 /* Pods-Neopixels.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RDD33Q2LEW;
 				INFOPLIST_FILE = Neopixels/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/NMSSH/NMSSH-iOS/Libraries/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blue90.Neopixels;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		90165E051DABB8C800B6059E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBCC03CA3F5BE3B4DEF4EA25 /* Pods-Neopixels.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RDD33Q2LEW;
 				INFOPLIST_FILE = Neopixels/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/NMSSH/NMSSH-iOS/Libraries/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blue90.Neopixels;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		90165E071DABB8C800B6059E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E98A41A3AC1C18631F1899F /* Pods-NeopixelsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = RDD33Q2LEW;
@@ -383,6 +612,7 @@
 		};
 		90165E081DABB8C800B6059E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FE188C409525CABDE27A633 /* Pods-NeopixelsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = RDD33Q2LEW;
@@ -414,6 +644,7 @@
 				90165E051DABB8C800B6059E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90165E061DABB8C800B6059E /* Build configuration list for PBXNativeTarget "NeopixelsUITests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +653,7 @@
 				90165E081DABB8C800B6059E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
