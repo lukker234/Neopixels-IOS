@@ -14,6 +14,8 @@ class CreateRaspRegistrationsTable extends Migration
     {
         Schema::create('rasp__registrations', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('mac_adres');
+            $table->string('ip_adres');
             $table->timestamps();
         });
     }

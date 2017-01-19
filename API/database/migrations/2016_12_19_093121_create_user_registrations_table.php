@@ -14,8 +14,9 @@ class CreateUserRegistrationsTable extends Migration
     {
         Schema::create('user_registrations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username');
+            $table->string('rasp_mac');
             $table->string('device_mac');
+            $table->string('location');
             $table->timestamps();
         });
     }

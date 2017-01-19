@@ -14,11 +14,14 @@ class CreateTempsTable extends Migration
     {
         Schema::create('temps', function (Blueprint $table) {
             $table->increments('id')->unique();
+            $table->string('location_id');
             $table->string('temp');
             $table->string('air');
             $table->string('device');
             $table->string('rasp_mac');
             $table->string('local_ip');
+            $table->string('temp_buiten');
+            $table->string('air_buiten');
             $table->rememberToken();
             $table->timestamps();
         });

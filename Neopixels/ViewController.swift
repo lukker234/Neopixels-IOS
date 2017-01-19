@@ -53,21 +53,21 @@ class ViewController: UIViewController{
         })
     }
     
-    func showTempData(sender: UIButton!) {
-        let btnsendtag: UIButton = sender
-        if btnsendtag.tag == 1 {
-            self.present(showTempHumWeekViewController(), animated: false, completion: nil)
-//            self.present(SendAmountSensorViewController(), animated: false, completion: nil)
-
-        }
-    }
-    
-    func setupSystem(sender: UIButton!) {
-        let btnsendtag: UIButton = sender
-        if btnsendtag.tag == 1 {
-            self.present(connectInfoViewController(), animated: false, completion: nil)
-        }
-    }
+//    func showTempData(sender: UIButton!) {
+//        let btnsendtag: UIButton = sender
+//        if btnsendtag.tag == 1 {
+//            self.present(showTempHumWeekViewController(), animated: false, completion: nil)
+////            self.present(SendAmountSensorViewController(), animated: false, completion: nil)
+//
+//        }
+//    }
+//    
+//    func setupSystem(sender: UIButton!) {
+//        let btnsendtag: UIButton = sender
+//        if btnsendtag.tag == 1 {
+//            self.present(connectInfoViewController(), animated: false, completion: nil)
+//        }
+//    }
     
     func parseDataNeopixels(JSONDataNeopixels : Data){
         print("Data: \(String(describing: JSONDataNeopixels))")

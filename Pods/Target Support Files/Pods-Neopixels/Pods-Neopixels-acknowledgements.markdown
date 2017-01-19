@@ -49,6 +49,14 @@ THE SOFTWARE.
 > SOFTWARE. 
 
 
+## GoogleMaps
+
+Copyright 2016 Google
+
+## GooglePlaces
+
+Copyright 2016 Google
+
 ## NMSSH
 
 Copyright (c) 2013 Nine Muses AB

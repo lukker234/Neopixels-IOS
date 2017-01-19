@@ -19,12 +19,15 @@ class SendAmountSensorViewController: UIViewController {
     var textView = UIView()
     var ip_adres_rasp = "192.168.254.120"
     
-//    let apiURLNeopixels = "http://86.82.142.15/public/api/date/regs/202481589565676"
+    let apiURLNeopixels = "http://86.82.142.15/public/api/date/regs/202481589565676"
     typealias JSONStandard = [String : AnyObject]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.getAPIRequestNeopixels(url_neopixels: apiURLNeopixels)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        view.addGestureRecognizer(tap)
+        self.getAPIRequestNeopixels(url_neopixels: apiURLNeopixels)
         
         self.view.backgroundColor = UIColorFromHex(0xc5C9BBF)
         let screenWidth = screenSize.width
@@ -68,30 +71,30 @@ class SendAmountSensorViewController: UIViewController {
     
     
     
-//    func getAPIRequestNeopixels(url_neopixels : String){
-//        
-//        Alamofire.request(url_neopixels).responseJSON(completionHandler: {
-//            response in
-//            
-//            self.parseDataNeopixels(JSONDataNeopixels: response.data!)
-//        })
-//    }
-//    
-//    func parseDataNeopixels(JSONDataNeopixels : Data){
-//        do{
-//            let tempJSON = try JSONSerialization.jsonObject(with: JSONDataNeopixels, options: .mutableContainers)  as! JSONStandard
-//            if let registration = tempJSON["rasp__registrations"] as? [AnyObject] {
-//                print(NetworkViewController.Variables.coinsVariable)
-//                if(registration[0]["mac_adres"]! as! String == NetworkViewController.Variables.coinsVariable){
-//                    ip_adres_rasp = registration[0]["ip_adres"]! as! String
-//                    print(ip_adres_rasp)
-//                }
-//            }
-//        }
-//        catch{
-//            print(error)
-//        }
-//    }
+    func getAPIRequestNeopixels(url_neopixels : String){
+        
+        Alamofire.request(url_neopixels).responseJSON(completionHandler: {
+            response in
+            
+            self.parseDataNeopixels(JSONDataNeopixels: response.data!)
+        })
+    }
+    
+    func parseDataNeopixels(JSONDataNeopixels : Data){
+        do{
+            let tempJSON = try JSONSerialization.jsonObject(with: JSONDataNeopixels, options: .mutableContainers)  as! JSONStandard
+            if let registration = tempJSON["rasp__registrations"] as? [AnyObject] {
+                print(NetworkViewController.Variables.coinsVariable)
+                if(registration[0]["mac_adres"]! as! String == NetworkViewController.Variables.coinsVariable){
+                    ip_adres_rasp = registration[0]["ip_adres"]! as! String
+                    print(ip_adres_rasp)
+                }
+            }
+        }
+        catch{
+            print(error)
+        }
+    }
     
     
     
@@ -133,4 +136,7 @@ class SendAmountSensorViewController: UIViewController {
         return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
     }
 
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

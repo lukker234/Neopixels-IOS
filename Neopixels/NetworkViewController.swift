@@ -27,7 +27,10 @@ class NetworkViewController: UIViewController, CLLocationManagerDelegate {
     var infoWifi = UILabel()
     let infoWifiBG = UIView()
     let result = UILabel()
+    var location = ""
     var mac_adress_rasp = ""
+    let locationManager = CLLocationManager()
+    var city = ""
     
     struct Variables {
         static var coinsVariable = ""
@@ -37,6 +40,17 @@ class NetworkViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
+        
+        print("Device: \(UDID)")
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        view.addGestureRecognizer(tap)
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
         
         self.view.backgroundColor = UIColorFromHex(0xc5C9BBF)
         
@@ -62,19 +76,19 @@ class NetworkViewController: UIViewController, CLLocationManagerDelegate {
         self.mainText2.isUserInteractionEnabled = true
         self.view.addSubview(mainText2)
         
-        self.mainTitle.frame = CGRect(origin: CGPoint(x: 40,y :screenHeight/4+50), size: CGSize(width: screenWidth-80, height: 50))
+        self.mainTitle.frame = CGRect(origin: CGPoint(x: 40,y :screenHeight/4), size: CGSize(width: screenWidth-80, height: 50))
         self.mainTitle.textColor = UIColorFromHex(0xc37485f)
         self.mainTitle.text = "Geef netwerkgegevens op"
         self.mainTitle.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 20.0)
         self.mainTitle.textAlignment = NSTextAlignment.center
         self.view.addSubview(mainTitle)
         
-        let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: screenWidth/2+150,y :screenHeight/2-120), size: CGSize(width: 20, height: 20)))
+        let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: screenWidth/4*3,y :screenHeight/2-100), size: CGSize(width: 20, height: 20)))
         imageView.image = question
         self.view.addSubview(imageView)
         
         
-        let btn: UIButton = UIButton(frame: CGRect(origin: CGPoint(x: screenWidth/2+140,y :screenHeight/2-130), size: CGSize(width: 40, height: 40)))
+        let btn: UIButton = UIButton(frame: CGRect(origin: CGPoint(x: screenWidth/4*3,y :screenHeight/2-110), size: CGSize(width: 40, height: 40)))
         btn.backgroundColor = UIColor.gray.withAlphaComponent(0)
         btn.setTitleColor(UIColorFromHex(0xc303d51), for: .normal)
         btn.layer.cornerRadius = 5
@@ -82,14 +96,14 @@ class NetworkViewController: UIViewController, CLLocationManagerDelegate {
         btn.tag = 1
         self.view.addSubview(btn)
         
-        self.infoWifiBG.frame = CGRect(origin: CGPoint(x: screenWidth/2-75,y :screenHeight/2-80), size: CGSize(width: 300, height: 150))
+        self.infoWifiBG.frame = CGRect(origin: CGPoint(x: screenWidth/2-150,y :screenHeight/2-75), size: CGSize(width: 300, height: 150))
         self.infoWifiBG.layer.cornerRadius = 5
         self.infoWifiBG.layer.shadowOpacity = 0.3
         self.infoWifiBG.layer.opacity = 0
         self.infoWifiBG.backgroundColor = UIColorFromHex(0xc37485f)
         self.view.addSubview(infoWifiBG)
         
-        self.infoWifi.frame = CGRect(origin: CGPoint(x: screenWidth/2-50,y :screenHeight/2-80), size: CGSize(width: 250, height: 150))
+        self.infoWifi.frame = CGRect(origin: CGPoint(x: screenWidth/2-125,y :screenHeight/2-75), size: CGSize(width: 250, height: 150))
         self.infoWifi.textColor = UIColor.white
         self.infoWifi.text = "Vul hieronder uw SSID (naam van uw Wifi) en uw wachtwoord in, klik hierna op 'Volgende stap' en het systeem maakt zichzelf klaar"
         self.infoWifi.numberOfLines = 10
@@ -164,7 +178,7 @@ class NetworkViewController: UIViewController, CLLocationManagerDelegate {
                     }
                 }
                 
-                try! session?.channel.execute("cd / && python register_device.py \(self.UDID) && cd /etc/wpa_supplicant/ && sudo python create_wifi.py \(self.mainText.text!) \(self.mainText2.text!)")
+                try! session?.channel.execute("cd / && python register_device.py \(self.UDID) \(self.city) && cd /etc/wpa_supplicant/ && sudo python create_wifi.py \(self.mainText.text!) \(self.mainText2.text!)")
                 
                 self.mac_adress_rasp = try! session!.channel.execute("cd / && python get_mac.py")
                 let ns_mac_adress:NSString = self.mac_adress_rasp as NSString
@@ -174,7 +188,7 @@ class NetworkViewController: UIViewController, CLLocationManagerDelegate {
                 do {
                     let setup = try session!.channel.execute("cd /etc/init.d/ && sudo mv start.sh start_backup.sh && sudo mv register_rasp_b.sh register_rasp.sh && sudo pkill -o -u pi sshd && sudo reboot")
                     print(setup)
-                    session?.disconnect()
+                    session!.disconnect()
                 }
                 catch is Error {
                     print(Error.self)
@@ -185,6 +199,45 @@ class NetworkViewController: UIViewController, CLLocationManagerDelegate {
                         self.present(SendAmountSensorViewController(), animated: false, completion: nil)
                 })
             }
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func displayLocationInfo(_ placemark: CLPlacemark)
+    {
+        self.locationManager.stopUpdatingLocation()
+        city = String(describing: placemark.locality!)
+        print("Gevonden stad: \(city)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
+    {
+        
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
+            
+            if (error != nil)
+            {
+                print("Error" + (error?.localizedDescription)!)
+                return
+            }
+            
+            if (placemarks?.count)! > 0
+            {
+                let pm = placemarks?[0] as CLPlacemark!
+                self.displayLocationInfo(pm!)
+            }
+            else
+            {
+                print("Error with the data.")
+            }
+        })
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Error: " + error.localizedDescription)
     }
 
 }

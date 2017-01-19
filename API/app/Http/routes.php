@@ -23,6 +23,8 @@ $api->version('v1', function($api){
 
     $api->get('date/temps/all', 'App\Http\Controllers\HomeController@getTempsAll');
 
+    $api->get('date/temps/now/{rasp_mac}', 'App\Http\Controllers\HomeController@getTempsNow');
+
     $api->get('date/regs/all', 'App\Http\Controllers\HomeController@getRegAll');
 
     $api->get('date/temps/{rasp_mac}', 'App\Http\Controllers\HomeController@getTempMac');
@@ -33,13 +35,15 @@ $api->version('v1', function($api){
 
     $api->get('register/mac/{mac_rasp}/ip/{ip_rasp}', 'App\Http\Controllers\HomeController@registerRasp');
 
-    $api->get('temp/{temp_value}/air/{air}/device/{device_adres}/location/{rasp_mac}/ip_adres/{local_ip}', 'App\Http\Controllers\HomeController@setTempsNew');
+    $api->get('temp/{temp_value}/air/{air}/device/{device_adres}/location/{rasp_mac}/ip_adres/{local_ip}/temp_buiten/{temp_buiten}/air_buiten/{air_buiten}', 'App\Http\Controllers\HomeController@setTempsNew');
 
-    $api->get('register_user/{device_mac}/{rasp_mac}', 'App\Http\Controllers\HomeController@registerUser');
+    $api->get('register_user/{device_mac}/{rasp_mac}/location/{location}', 'App\Http\Controllers\HomeController@registerUser');
 
     $api->get('check/registerUser/{mac_adres}', 'App\Http\Controllers\HomeController@checkMacDevice');
 
     $api->get('last7days/{rasp_mac}', 'App\Http\Controllers\HomeController@avg_date');
+
+    $api->get('system/{device_mac}/collectData','App\Http\Controllers\HomeController@systemData');
 });
 
 Route::get('/home', 'HomeController@index');

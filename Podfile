@@ -9,6 +9,8 @@ target 'Neopixels' do
 	pod 'Alamofire', '~> 4.0'
 	pod 'SnapKit', '~> 3.0.2'
 	pod 'NMSSH'
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
     pod 'WWCalendarTimeSelector'
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 

@@ -13,7 +13,7 @@ class connectInfoViewController: UIViewController {
 
     let screenSize: CGRect = UIScreen.main.bounds
     var topBar = UIView()
-    let tutorial = #imageLiteral(resourceName: "connect to wifi")
+    let tutorial = #imageLiteral(resourceName: "setup_system")
     let confirmation = #imageLiteral(resourceName: "Connection confirmation")
     let mainTitle = UILabel()
     let subText = UILabel()
@@ -50,6 +50,10 @@ class connectInfoViewController: UIViewController {
         self.subText.textAlignment = NSTextAlignment.center
         self.view.addSubview(subText)
         
+        let imageView_water_drop_dark = UIImageView(frame: CGRect(origin: CGPoint(x: 60, y:120), size: CGSize(width: screenWidth-120, height: screenHeight-220)))
+        imageView_water_drop_dark.image = #imageLiteral(resourceName: "setup_system")
+        self.view.addSubview(imageView_water_drop_dark)
+        
         let btn: UIButton = UIButton(frame: CGRect(origin: CGPoint(x: screenWidth-150,y :screenHeight-75), size: CGSize(width: 100, height: 40)))
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.layer.cornerRadius = 5
@@ -79,7 +83,7 @@ class connectInfoViewController: UIViewController {
         let btnsendtag: UIButton = sender
         if btnsendtag.tag == 1 {
             self.present(wifiCheckViewController(), animated: false, completion: nil)
-            //            self.present(showTempHumWeekViewController(), animated: false, completion: nil)
+//            self.present(NetworkViewController(), animated: false, completion: nil)
         }
     }
 

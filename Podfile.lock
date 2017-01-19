@@ -3,6 +3,13 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - GoogleMaps (2.1.1):
+    - GoogleMaps/Maps (= 2.1.1)
+  - GoogleMaps/Base (2.1.1)
+  - GoogleMaps/Maps (2.1.1):
+    - GoogleMaps/Base
+  - GooglePlaces (2.1.1):
+    - GoogleMaps/Base (= 2.1.1)
   - NMSSH (2.2.5)
   - SnapKit (3.0.2)
   - WWCalendarTimeSelector (1.3.13)
@@ -10,6 +17,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - GoogleMaps
+  - GooglePlaces
   - NMSSH
   - SnapKit (~> 3.0.2)
   - WWCalendarTimeSelector
@@ -26,10 +35,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   NMSSH: 8643df89d73b9a3e398a5a5971f6ea4bb1179ea7
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   WWCalendarTimeSelector: 334f8b4ff16367d75fb9f21073203641fbd3d749
 
-PODFILE CHECKSUM: ce8956f30d3964626a0ef90faca67d4602662cf3
+PODFILE CHECKSUM: e27fa7fff0420a742f6bc38981826c69bf8d00c4
 
 COCOAPODS: 1.1.1

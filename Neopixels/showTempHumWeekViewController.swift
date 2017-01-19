@@ -20,14 +20,12 @@ extension UIImage{
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage!
-        
     }
 }
 
-class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate {
+class showTempHumWeekViewController: UIViewController {
     
     let screenSize: CGRect = UIScreen.main.bounds
-    var city = ""
 //    let mac_adres = NetworkViewController.Variables.coinsVariable
     let mac_adres = "202481589565676"
     let labelTempOutside = UILabel()
@@ -39,6 +37,7 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
     let labelLocationHome = UILabel()
     let selected_circle = CAShapeLayer()
     var degrees = "\u{00B0}"
+    var locatie = ""
     var showTempOutside = UIView()
     var infoSelectedDate = UIView()
     var showTempOutside2 = UIView()
@@ -50,6 +49,8 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
     var b = Int()
     var temp_value = ""
     var air_value = ""
+    var temp_buiten = ""
+    var air_buiten = ""
     var arrayCount = Int()
     let mainTitle = UILabel()
     var dummytemps = [String]()
@@ -62,10 +63,9 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
     var brushWidth: CGFloat = 3.0
     var opacity: CGFloat = 1.0
     var swiped = false
-    let locationManager = CLLocationManager()
     
     var tempLast7Array = [Double]()
-    var temps = ["0": 18, "10": 16.5, "20": 15, "30": 13.5, "40": 12]
+    var temps = ["0\u{00B0}": 18, "10\u{00B0}": 16.5, "20\u{00B0}": 15, "30\u{00B0}": 13.5, "40\u{00B0}": 12]
     var week = [String]()
     
     let imageView = UIImageView()
@@ -82,19 +82,14 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
         
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
-        
         self.view.backgroundColor = FlatSkyBlue()
         
-        let apiURL = "http://api.openweathermap.org/data/2.5/weather?q=\(self.city),nl&appid=c4d0492babc63c1e63f3afa08893b14d"
-        let apiURLNeopixels = "http://86.82.142.15/public/api/date/temps/\(mac_adres)"
+
+        let apiURLNeopixels = "http://86.82.142.15/public/api/date/temps/now/\(mac_adres)"
         
         let apiURLNeopixelsArray = "http://86.82.142.15/public/api/last7days/\(mac_adres)"
         
-        self.getAPIRequest(url: apiURL)
+
         self.getAPIRequestNeopixels(url_neopixels: apiURLNeopixels)
         self.getAPIRequestNeopixelsArray(url_neopixels_array: apiURLNeopixelsArray)
     
@@ -149,7 +144,7 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
         
         self.mainTitle.frame = CGRect(origin: CGPoint(x: 30, y:screenHeight/4*1+70), size: CGSize(width: screenWidth/4-10, height: 50))
         self.mainTitle.textColor = UIColorFromHex(0xc303d51)
-        self.mainTitle.text = "Thuis"
+        self.mainTitle.text = "Home"
         self.mainTitle.adjustsFontSizeToFitWidth = true
         self.mainTitle.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 40.0)
         self.mainTitle.textAlignment = NSTextAlignment.left
@@ -159,7 +154,7 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
         for (key,value) in temps{
             
             let temp_side = UILabel()
-            temp_side.frame = CGRect(origin: CGPoint(x: 10,y :screenHeight/20*CGFloat(value)), size: CGSize(width: 25, height: 20))
+            temp_side.frame = CGRect(origin: CGPoint(x: 10,y :screenHeight/20*CGFloat(value)), size: CGSize(width: 30, height: 20))
             temp_side.textColor = UIColorFromHex(0xc303d51)
             temp_side.font = UIFont(name: "AppleSDGothicNeo", size: 1.0)
             temp_side.text = key
@@ -191,7 +186,7 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
         self.view.addSubview(labelHumidInside)
         
         //Create location label
-        self.labelLocation.frame = CGRect(origin: CGPoint(x: 30,y :100), size: CGSize(width: screenWidth/4-10, height: 50))
+        self.labelLocation.frame = CGRect(origin: CGPoint(x: 30,y :100), size: CGSize(width: screenWidth-60, height: 50))
         self.labelLocation.textColor = UIColor.white
         self.labelLocation.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 80)
         self.labelLocation.numberOfLines = 0
@@ -219,41 +214,6 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
     
     
     
-    
-    
-    func getAPIRequest(url : String){
-        
-        Alamofire.request(url).responseJSON(completionHandler: {
-            response in
-            
-            self.parseData(JSONData: response.data!)
-        })
-    }
-    
-    func parseData(JSONData : Data){
-        do{
-            let tempJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
-            print(tempJSON)
-            if let main = tempJSON["main"] as? [String : AnyObject]{
-                if let temp = main["temp"]{
-                    let temp_converted = Double(temp as! NSNumber) - 273.15
-                    print(temp_converted)
-                    labelTempOutside.text = String(Double(round(10*temp_converted)/10)) + degrees
-                }
-                if let hum = main["humidity"]{
-                    let hum_converted = Double(hum as! NSNumber)
-                    print(hum_converted)
-                    labelHumidOutside.text = String(hum_converted) + "%"
-                }
-            }
-        }
-        catch{
-            print(error)
-        }
-    }
-    
-    
-    
     func getAPIRequestNeopixels(url_neopixels : String){
         
         Alamofire.request(url_neopixels).responseJSON(completionHandler: {
@@ -266,12 +226,19 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
     func parseDataNeopixels(JSONDataNeopixels : Data){
         do{
             let tempJSON = try JSONSerialization.jsonObject(with: JSONDataNeopixels, options: .mutableContainers)  as! JSONStandard
-            if let temps = tempJSON["temps"] as? [AnyObject] {
-                temp_value = temps[0]["temp"] as! String
-                air_value = temps[0]["air"] as! String
+            print("Result: \(tempJSON["temp"])")
+            if let temps = tempJSON["temp"] {
+                temp_value = temps["temp"] as! String
+                air_value = temps["air"] as! String
+                temp_buiten = temps["temp_buiten"] as! String
+                air_buiten = temps["air_buiten"] as! String
+                locatie = temps["Locatie"] as! String
             }
             labelTempInside.text = temp_value + degrees
             labelHumidInside.text = air_value + "%"
+            labelTempOutside.text = temp_buiten + degrees
+            labelHumidOutside.text = air_buiten + "%"
+            labelLocation.text = locatie
         }
         catch{
             print(error)
@@ -314,8 +281,30 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
                 
                 point_array.append(CGPoint(x:screenSize.width/8*CGFloat(i + 1)+10, y:screenSize.height/20*CGFloat(tempLast7Array[i])+10))
             }
-            print(dummytemps)
-            createDot()
+            print("Temp_array: \(tempLast7Array)")
+            if(tempLast7Array.count < 7){
+                let warningWeekView = UIView()
+                warningWeekView.frame = CGRect(origin: CGPoint(x:7.5, y:screenSize.height/2+30), size: CGSize(width: screenSize.width-15, height: screenSize.height/2-40))
+                warningWeekView.backgroundColor = FlatGray()
+                warningWeekView.alpha = 0.3
+                warningWeekView.layer.cornerRadius = 5
+                warningWeekView.layer.shadowOffset = CGSize(width: 2, height: 5)
+                warningWeekView.layer.shadowOpacity = 0.3
+                self.view.addSubview(warningWeekView)
+                
+                let warningText = UILabel()
+                warningText.frame = CGRect(origin: CGPoint(x: screenSize.width/2-100,y :warningWeekView.frame.origin.y+warningWeekView.frame.size.height/2-25), size: CGSize(width: 200, height: 50))
+                warningText.textColor = UIColor.white
+                warningText.text = "Not enough measurements for graph"
+                warningText.numberOfLines = 0
+                warningText.lineBreakMode = .byWordWrapping
+                warningText.font = UIFont(name: "AppleSDGothicNeo", size: 18)
+                warningText.textAlignment = NSTextAlignment.center
+                view.addSubview(warningText)
+            }
+            else{
+                createDot()
+            }
         }
         catch{
             print(error)
@@ -364,35 +353,8 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
         return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
     }
     
-    
-    
-    func locationManager(_ manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
-    {
-        
-        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
-            
-            if (error != nil)
-            {
-                print("Error" + (error?.localizedDescription)!)
-                return
-            }
-            
-            if (placemarks?.count)! > 0
-            {
-                let pm = placemarks?[0] as CLPlacemark!
-                self.displayLocationInfo(pm!)
-            }
-            else
-            {
-                print("Error with the data.")
-            }
-        })
-    }
-    
     func someAction(_ sender:UITapGestureRecognizer){
         let location = sender.location(in: self.view)
-        
-//        for (point,temps,humid) in zip(point_array,dummytemps,dummyhumid){
         for c in 0..<point_array.count{
             let space_up_y = location.y + 40
             let space_down_y = location.y - 40
@@ -450,21 +412,7 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
         }
     }
     
-    func displayLocationInfo(_ placemark: CLPlacemark)
-    {
-        self.locationManager.stopUpdatingLocation()
-        city = String(describing: placemark.locality!)
-        print("Gevonden stad: \(city)")
-        labelLocation.text = city
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    {
-        print("Error: " + error.localizedDescription)
-    }
-    
     func Menu(){
-        //Menu bar
         let menu = UIView()
         menu.frame = CGRect(origin: CGPoint(x:0, y:0), size: CGSize(width: screenSize.width, height: 80))
         menu.backgroundColor = UIColorFromHex(0xcecf0f1)
@@ -482,31 +430,35 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
         home_btn.setTitle("Home", for: .normal)
         home_btn.layer.shadowOffset = CGSize(width: 2, height: 5)
         home_btn.titleLabel!.font = UIFont(name: "AppleSDGothicNeo", size: 15.0)
-        home_btn.tag = 3
+        home_btn.tag = 1
         self.view.addSubview(home_btn)
         
         let btn: UIButton = UIButton(frame: CGRect(origin: CGPoint(x:screenSize.width/2-25, y:40), size: CGSize(width: 50, height: 24)))
         btn.setTitleColor(FlatRedDark(), for: .normal)
-        btn.setTitle("Graph", for: .normal)
+        btn.setTitle("Check", for: .normal)
         btn.layer.shadowOffset = CGSize(width: 2, height: 5)
         btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         btn.titleLabel!.font = UIFont(name: "AppleSDGothicNeo", size: 15.0)
-        btn.tag = 1
+        btn.tag = 2
         self.view.addSubview(btn)
         
-//        let table_btn: UIButton = UIButton(frame: CGRect(origin: CGPoint(x:screenSize.width/4*3-25, y:40), size: CGSize(width: 50, height: 24)))
-//        table_btn.setTitleColor(FlatRedDark(), for: .normal)
-//        table_btn.setTitle("Table", for: .normal)
-//        table_btn.layer.shadowOffset = CGSize(width: 2, height: 5)
-//        table_btn.titleLabel!.font = UIFont(name: "AppleSDGothicNeo", size: 15.0)
-//        table_btn.tag = 2
-//        self.view.addSubview(table_btn)
+        let table_btn: UIButton = UIButton(frame: CGRect(origin: CGPoint(x:screenSize.width/4*3-25, y:40), size: CGSize(width: 50, height: 24)))
+        table_btn.setTitleColor(FlatRedDark(), for: .normal)
+        table_btn.setTitle("Info", for: .normal)
+        table_btn.layer.shadowOffset = CGSize(width: 2, height: 5)
+        table_btn.titleLabel!.font = UIFont(name: "AppleSDGothicNeo", size: 15.0)
+        table_btn.tag = 3
+        table_btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        self.view.addSubview(table_btn)
     }
     
     func buttonAction(sender: UIButton!) {
         let btnsendtag: UIButton = sender
-        if btnsendtag.tag == 1 {
+        if btnsendtag.tag == 2 {
             self.present(SecondViewController(), animated: false, completion: nil)
+        }
+        if btnsendtag.tag == 3 {
+            self.present(ShowInfoViewController(), animated: false, completion: nil)
         }
     }
 }
@@ -573,4 +525,3 @@ class showTempHumWeekViewController: UIViewController, CLLocationManagerDelegate
 //            catch{
 //                print(error)
 //            }
-
